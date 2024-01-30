@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise #6 || Cool accordion</title>
+
+    <!-- Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: gray;
+      }
+      #hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .accordion {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      li {
+        list-style-type: none;
+      }
+      .sunny {
+        background-image: url("images/sunny-env.png");
+      }
+      .windy {
+        background-image: url("images/windy-env.png");
+      }
+      .cloudy {
+        background-image: url("images/cloudy-env.png");
+      }
+      .thunderstorms {
+        background-image: url("images/rain-env.png");
+      }
+      .rainy {
+        background-image: url("images/rain-env.png");
+      }
+      .accordion--item {
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: 1s;
+        cursor: pointer;
+        border-radius: 12px;
+        padding: 15px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        flex: 0;
+        background-color: aqua;
+      }
+      .opened {
+        flex: 1;
+        flex-basis: 400px;
+      }
+
+      .date {
+        display: flex;
+        flex-direction: column;
+      }
+      .temp {
+        display: flex;
+        flex-direction: column;
+      }
+      .temp .temp--values {
+        display: flex;
+      }
+      .temp .temp--values:first-child {
+        font-size: larger;
+        font-weight: bold;
+      }
+      .readings {
+        display: flex;
+        gap: 10px;
+        display: none;
+      }
+      .readings li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .opened > .readings {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="hero">
+      <ul class="accordion">
+        <li class="accordion--item cloudy opened">
+          <ul class="date">
+            <li>Tue</li>
+            <li>12 Apr</li>
+          </ul>
+          <div class="temp">
+            <p>Cloudy</p>
+            <ul class="temp--values">
+              <li>24°</li>
+              <li>16°</li>
+            </ul>
+          </div>
+          <ul class="readings">
+            <li>
+              <img src="icons/icon-wind@c.svg" alt="Wind" />
+              <p>23 km/h</p>
+              <p>Wind</p>
+            </li>
+            <li>
+              <img src="icons/icon-humidity@c.svg" alt="Humidity" />
+              <p>29%</p>
+              <p>Humidity</p>
+            </li>
+            <li>
+              <img src="icons/icon-rain@c.svg" alt="Rain" />
+              <p>8%</p>
+              <p>Rain</p>
+            </li>
+          </ul>
+          <ul class="bottom-temp temp--values">
+            <li>24°</li>
+            <li>16°</li>
+          </ul>
+        </li>
+        <li class="accordion--item sunny">
+          <ul class="date">
+            <li>Wed</li>
+            <li>13 Apr</li>
+          </ul>
+          <div class="temp">
+            <p>Sunny</p>
+            <ul class="temp--values">
+              <li>25°</li>
+              <li>13°</li>
+            </ul>
+          </div>
+          <ul class="readings">
+            <li>
+              <img src="icons/icon-wind@c.svg" alt="Wind" />
+              <p>13 km/h</p>
+              <p>Wind</p>
+            </li>
+            <li>
+              <img src="icons/icon-humidity@c.svg" alt="Humidity" />
+              <p>25%</p>
+              <p>Humidity</p>
+            </li>
+            <li>
+              <img src="icons/icon-rain@c.svg" alt="Rain" />
+              <p>2%</p>
+              <p>Rain</p>
+            </li>
+          </ul>
+          <ul class="bottom-temp temp--values">
+            <li>25°</li>
+            <li>13°</li>
+          </ul>
+        </li>
+        <li class="accordion--item rainy">
+          <ul class="date">
+            <li>Thu</li>
+            <li>14 Apr</li>
+          </ul>
+          <div class="temp">
+            <p>Rainy</p>
+            <ul class="temp--values">
+              <li>19°</li>
+              <li>11°</li>
+            </ul>
+          </div>
+          <ul class="readings">
+            <li>
+              <img src="icons/icon-wind@c.svg" alt="Wind" />
+              <p>7 km/h</p>
+              <p>Wind</p>
+            </li>
+            <li>
+              <img src="icons/icon-humidity@c.svg" alt="Humidity" />
+              <p>56%</p>
+              <p>Humidity</p>
+            </li>
+            <li>
+              <img src="icons/icon-rain@c.svg" alt="Rain" />
+              <p>67%</p>
+              <p>Rain</p>
+            </li>
+          </ul>
+          <ul class="bottom-temp temp--values">
+            <li>19°</li>
+            <li>11°</li>
+          </ul>
+        </li>
+        <li class="accordion--item thunderstorms">
+          <ul class="date">
+            <li>Fri</li>
+            <li>15 Apr</li>
+          </ul>
+          <div class="temp">
+            <p>Thunderstorms</p>
+            <ul class="temp--values">
+              <li>23°</li>
+              <li>12°</li>
+            </ul>
+          </div>
+          <ul class="readings">
+            <li>
+              <img src="icons/icon-wind@c.svg" alt="Wind" />
+              <p>34 km/h</p>
+              <p>Wind</p>
+            </li>
+            <li>
+              <img src="icons/icon-humidity@c.svg" alt="Humidity" />
+              <p>49%</p>
+              <p>Humidity</p>
+            </li>
+            <li>
+              <img src="icons/icon-rain@c.svg" alt="Rain" />
+              <p>22%</p>
+              <p>Rain</p>
+            </li>
+          </ul>
+          <ul class="bottom-temp temp--values">
+            <li>23°</li>
+            <li>12°</li>
+          </ul>
+        </li>
+        <li class="accordion--item sunny">
+          <ul class="date">
+            <li>Sat</li>
+            <li>16 Apr</li>
+          </ul>
+          <div class="temp">
+            <p>Sunny</p>
+            <ul class="temp--values">
+              <li>29°</li>
+              <li>20°</li>
+            </ul>
+          </div>
+          <ul class="readings">
+            <li>
+              <img src="icons/icon-wind@c.svg" alt="Wind" />
+              <p>10 km/h</p>
+              <p>Wind</p>
+            </li>
+            <li>
+              <img src="icons/icon-humidity@c.svg" alt="Humidity" />
+              <p>21%</p>
+              <p>Humidity</p>
+            </li>
+            <li>
+              <img src="icons/icon-rain@c.svg" alt="Rain" />
+              <p>0%</p>
+              <p>Rain</p>
+            </li>
+          </ul>
+          <ul class="bottom-temp temp--values">
+            <li>29°</li>
+            <li>20°</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      let accordionsItems = document.querySelectorAll(".accordion li");
+
+      accordionsItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          accordionsItems.forEach((item) => {
+            item.classList.remove("opened");
+          });
+
+          item.classList.add("opened");
+        });
+      });
+    </script>
+  </body>
+</html>

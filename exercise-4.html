@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise #4 || Simple dropdown menu</title>
+
+    <!-- Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --def-transition-duration: 0.25s;
+      }
+
+      html {
+        font-size: 16px;
+        font-family: "Figtree", sans-serif;
+        line-height: 1.5;
+      }
+
+      img {
+        display: block;
+      }
+
+      #hero {
+        background-color: #151618;
+        height: 50vh;
+        padding-top: 3rem;
+      }
+
+      #main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 5px;
+      }
+
+      nav ul a {
+        text-decoration: none;
+        color: #a1a2a3;
+        display: inline-block;
+      }
+
+      button {
+        appearance: none;
+        border: 1px solid #9e70eb;
+        color: #9e70eb;
+        background-color: transparent;
+        border-radius: 10rem;
+        padding: 0.75rem 1.5rem;
+        cursor: pointer;
+      }
+
+      .has-submenu {
+        position: relative;
+      }
+      .has-submenu ul {
+        transition: 0.4s;
+        transform: translateY(50px);
+        opacity: 0;
+        border-radius: 12px;
+        padding: 5px;
+        background-color: rgb(70, 70, 70);
+        visibility: hidden;
+        z-index: 1;
+        left: 0;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+      }
+      .has-submenu ul li {
+        transition: 0.4s;
+        cursor: pointer;
+        padding: 15px;
+        width: 200px;
+      }
+      .has-submenu ul li:hover {
+        border-radius: 12px;
+        background-color: gray;
+      }
+      .has-submenu ul li:hover a {
+        color: #e8e8e8;
+      }
+      .has-submenu:hover ul {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="hero">
+      <header id="main-header">
+        <a href="/"><img src="images/logo-l5.svg" alt="Logo" /></a>
+
+        <nav>
+          <ul>
+            <li class="has-submenu">
+              <a href="#">Services</a>
+              <ul>
+                <li><a href="#">Branding</a></li>
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">eCommerce</a></li>
+                <li><a href="#">Print</a></li>
+              </ul>
+            </li>
+            <li class="has-submenu">
+              <a href="#">Blog</a>
+              <ul>
+                <li><a href="#">Branding</a></li>
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">eCommerce</a></li>
+                <li><a href="#">Print</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button>Get a Quote</button>
+      </header>
+    </div>
+  </body>
+</html>

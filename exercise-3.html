@@ -1,0 +1,88 @@
+<!-- TRANSITIONS
+Można zapisywać po przecinku kolejne własności, co jest WYDAJNIEJSZE od ALL! -->
+<!-- KOLEJNOŚĆ: property duration funkcja deley -->
+<!-- Transition zapisujemy na elemencie, nie na pseudo-elemencie -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise #3 || Website header</title>
+
+    <!-- Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        font-size: 16px;
+        font-family: "Figtree", sans-serif;
+        line-height: 1.5;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 3rem auto;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      nav ul a {
+        text-decoration: none;
+        color: #151618;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background-color: rgb(122, 131, 253);
+        border-radius: 12px;
+        transition: 0.4s;
+        transition-timing-function: cubic-bezier(0, 0.72, 0.62, 0.98);
+      }
+
+      .btn:hover {
+        background-color: gray;
+      }
+      .btn:active {
+        opacity: 0.8;
+        background-color: rgb(122, 131, 253);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Logo</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#" class="btn">Get a Quote</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

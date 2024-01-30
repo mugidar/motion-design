@@ -108,17 +108,23 @@
           </div>
         </div>
       </div>
-
+<style>
+  #media video{
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.295);
+    border-radius: 12px;
+    height: 200px;
+    width: 400px;
+    object-fit: cover;
+  }
+</style>
       <div id="media">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/vqXLGX0szIQ?si=xS-QMF_3APkVzX-5"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <video
+          src="videos/video-1@c.mp4"
+          poster="https://images.pexels.com/photos/1276518/pexels-photo-1276518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          muted
+          controls
+    
+        >Your browser doesn't support video tag</video>
       </div>
     </section>
   </body>

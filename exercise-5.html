@@ -1,0 +1,295 @@
+<!-- Translate 3d wymusza na przeglądarce renderowanie elementu poprzez kartę graficzną 
+co może dać w rezultacie lepszą wydajność. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise #5 || Image gallery</title>
+
+    <!-- Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .gallery {
+        padding: 40px;
+        row-gap: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      li {
+        list-style-type: none;
+      }
+      a img {
+        object-fit: cover;
+        width: 500px;
+        height: 700px;
+      }
+      figure {
+        cursor: pointer;
+        overflow: hidden;
+        transition: 0.4s;
+        position: relative;
+      }
+      header {
+        margin-bottom: 20px;
+      }
+      figcaption {
+        color: white;
+        transition: 0.4s;
+        visibility: hidden;
+        opacity: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        inset: 0;
+        background-color: rgba(52, 53, 110, 0.76);
+        top: 0;
+        left: 0;
+        position: absolute;
+      }
+      figcaption main {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      figcaption footer {
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+      }
+      li:hover figcaption {
+        visibility: visible;
+        opacity: 1;
+      }
+      img {
+        transition: 0.4s;
+      }
+      li:hover a img {
+        transform: scale(1.5);
+      }
+
+      figure:hover .icon {
+        animation: rotate .4s ease-in-out;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+  
+      <ul class="gallery">
+        <li>
+          <figure>
+            <a href="#"
+              ><img
+                src="images/gallery-1.jpg"
+                alt="Great Barrier Reef, Australia"
+            /></a>
+            <figcaption>
+              <main>
+                <p class="small">9-day trip</p>
+                <h3>Great Barrier Reef, <em>Australia</em></h3>
+                <p>
+                  Dive into the vibrant underwater world of the Great Barrier
+                  Reef, a UNESCO World Heritage Site teeming with marine life.
+                </p>
+              </main>
+
+              <footer>
+                <div>
+                  <p class="small">From</p>
+                  <p class="price">€2,500</p>
+                </div>
+
+                <img
+                  src="icons/icon-arrow-right-color.svg"
+                  class="icon"
+                  alt="Icon"
+                />
+              </footer>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="#"
+              ><img src="images/gallery-2.jpg" alt="Gallery image"
+            /></a>
+            <figcaption>
+              <main>
+                <p class="small">7-day trip</p>
+                <h3>Grand Canyon, <em>United States</em></h3>
+                <p>
+                  Stand in awe at the colossal beauty of the Grand Canyon,
+                  carved by the forces of nature over millions of years.
+                </p>
+              </main>
+
+              <footer>
+                <div>
+                  <p class="small">From</p>
+                  <p class="price">€1,200</p>
+                </div>
+
+                <img
+                  src="icons/icon-arrow-right-color.svg"
+                  class="icon"
+                  class="icon"
+                  alt="Icon"
+                />
+              </footer>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="#"
+              ><img src="images/gallery-3.jpg" alt="Gallery image"
+            /></a>
+            <figcaption>
+              <main>
+                <p class="small">10-day trip</p>
+                <h3>Machu Picchu, <em>Peru</em></h3>
+                <p>
+                  Uncover the mystique of the ancient Inca ruins perched high in
+                  the Andes Mountains at Machu Picchu.
+                </p>
+              </main>
+
+              <footer>
+                <div>
+                  <p class="small">From</p>
+                  <p class="price">€2,200</p>
+                </div>
+
+                <img
+                  src="icons/icon-arrow-right-color.svg"
+                  class="icon"
+                  alt="Icon"
+                />
+              </footer>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="#"
+              ><img src="images/gallery-4.jpg" alt="Gallery image"
+            /></a>
+            <figcaption>
+              <main>
+                <p class="small">11-day trip</p>
+                <h3>Bali, <em>Indonesia</em></h3>
+                <p>
+                  Find tranquility on the idyllic island of Bali, with its lush
+                  landscapes, serene temples, and warm hospitality.
+                </p>
+              </main>
+
+              <footer>
+                <div>
+                  <p class="small">From</p>
+                  <p class="price">€3,200</p>
+                </div>
+
+                <img
+                  src="icons/icon-arrow-right-color.svg"
+                  class="icon"
+                  alt="Icon"
+                />
+              </footer>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="#"
+              ><img src="images/gallery-5.jpg" alt="Gallery image"
+            /></a>
+            <figcaption>
+              <main>
+                <p class="small">5-day trip</p>
+                <h3>Rio de Janeiro, <em>Brazil</em></h3>
+                <p>
+                  Experience the rhythm and energy of Rio de Janeiro, home to
+                  vibrant Carnival celebrations, iconic landmarks, and stunning
+                  beaches.
+                </p>
+              </main>
+
+              <footer>
+                <div>
+                  <p class="small">From</p>
+                  <p class="price">€1,600</p>
+                </div>
+
+                <img
+                  src="icons/icon-arrow-right-color.svg"
+                  class="icon"
+                  alt="Icon"
+                />
+              </footer>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="#"
+              ><img src="images/gallery-6.jpg" alt="Gallery image"
+            /></a>
+            <figcaption>
+              <main>
+                <p class="small">13-day trip</p>
+                <h3>Niagara Falls, <em>Canada</em></h3>
+                <p>
+                  Immerse yourself in the breathtaking cascades and embark on
+                  unforgettable adventures in this natural wonder.
+                </p>
+              </main>
+
+              <footer>
+                <div>
+                  <p class="small">From</p>
+                  <p class="price">€3,000</p>
+                </div>
+
+                <img
+                  src="icons/icon-arrow-right-color.svg"
+                  class="icon"
+                  alt="Icon"
+                />
+              </footer>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
